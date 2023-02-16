@@ -1,2 +1,1 @@
-# alx-low_level_programming
-c programming learning
+this is a readme
