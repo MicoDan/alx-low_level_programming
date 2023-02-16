@@ -1,2 +1,2 @@
 #!/bin/bash
-cpp $CFILE > c
+cpp -P input_file.c output_file.c
