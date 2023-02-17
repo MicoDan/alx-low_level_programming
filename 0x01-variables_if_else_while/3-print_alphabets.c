@@ -14,9 +14,10 @@ while (letter <= 'z')
 putchar(letter);
 letter++;
 }
-
-putchar('\n');
-
+while (toupper(letter) == 'Z');
+{
+putchar(letter);
+}
 return (0);
 }
 
