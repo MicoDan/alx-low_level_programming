@@ -16,11 +16,6 @@ n = rand() - RAND_MAX / 2;
 
 lastDigit = n % 10;
 
-if (n < 0)
-{
-lastDigit = -1 * (n % 10);
-}
-
 printf("Last digit of %d is %d and is ", n, lastDigit);
 
 if (lastDigit > 5)
