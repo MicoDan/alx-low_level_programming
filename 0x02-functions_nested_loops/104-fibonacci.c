@@ -3,30 +3,26 @@
 /**
  * main - Entry point
  *
- * Return: Always 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-int a = 1, b = 2, c, count = 2;
-
-printf("%d, %d, ", a, b);
-
+int count, flag, digit1, digit2, digit3;
+count = 0;
+digit1 = 0;
+digit2 = 1;
 while (count < 98)
 {
-c = a + b;
-a = b;
-b = c;
-
-printf("%d", c);
-
-if (count != 97)
-printf(", ");
-
+digit3 = digit1 + digit2;
+if (flag == 1)
+putchar(',');
+printf("%d", digit3);
+digit1 = digit2;
+digit2 = digit3;
+flag = 1;
 count++;
 }
-
 putchar('\n');
-
 return (0);
 }
 
