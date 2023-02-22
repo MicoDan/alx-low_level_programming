@@ -17,11 +17,11 @@ if (b % 2 == 0)
 sum += b;
 }
 }
-while (sum / digits > 9) {
+while (sum / digits > 9) 
 digits *= 10;
-}
 
-while (digits > 0) {
+while (digits > 0)
+ {
 int digit = sum / digits;
 putchar(digit + '0');
 sum %= digits;
