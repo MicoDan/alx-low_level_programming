@@ -1,28 +1,30 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - prints the first 50 numbers in the Fibonacci sequence,
+ * starting with 1 and 2, followed by a newline
  *
- * Return: Always 0 (Success)
+ * Return: 0 (Success)
  */
 int main(void)
 {
-int count, flag, digit1, digit2, digit3;
-count = 0;
-digit1 = 0;
-digit2 = 1;
-while (count < 98)
+int i;
+long int a = 0;
+long int b = 1;
+long int c;
+
+for (i = 0; i < 50; i++)
 {
-digit3 = digit1 + digit2;
-if (flag == 1)
-putchar(',');
-printf("%d", digit3);
-digit1 = digit2;
-digit2 = digit3;
-flag = 1;
-count++;
+c = a + b;
+a = b;
+b = c;
+if (i != 49)
+printf("%ld, ", c);
+else
+printf("%ld\n", c);
 }
-putchar('\n');
 return (0);
 }
+
+
 
