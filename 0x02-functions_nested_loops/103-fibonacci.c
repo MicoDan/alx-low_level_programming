@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-int a = 1, b = 2, c, sum = 2, digits = 1;
+int a = 1, b = 2, c, sum = 2, digits = 1, digit;
 while (b <= 4000000)
 {
 c = a + b;
@@ -22,7 +22,7 @@ digits *= 10;
 
 while (digits > 0)
 {
-int digit = sum / digits;
+digit = sum / digits;
 putchar(digit + '0');
 sum %= digits;
 digits /= 10;
