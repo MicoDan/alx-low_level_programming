@@ -1,30 +1,33 @@
 #include <stdio.h>
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+return (write(1, &c, 1));
+}
 
 /**
- * print_sign - Prints the sign of a number
+ * _puts - prints a string, followed by a new line, to stdout
+ * @str: pointer to the string to print
  *
- * @n: The number to check
- *
- * Return: 1 if positive, 0 if zero, -1 if negative.
+ * Return: void
  */
-int print_sign(int n)
+void _puts(char *str)
 {
-if (n > 0)
+int i = 0;
+while (str[i] != '\0')
 {
-putchar('+');
-return (+1);
+putchar(str[i]);
+i++;
 }
-else if (n == 0)
-{
-putchar('0');
-return (00);
+putchar('\n');
 }
-else
-{
-putchar('-');
-return (-1);
-}
-}
+
 
 
 
