@@ -6,20 +6,28 @@
  */
 int main(void)
 {
-int i, fib_count = 50;
-unsigned long int prev = 0, curr = 1, next;
-for (i = 1; i <= fib_count; i++)
+int i, fib[50];
+
+fib[0] = 1;
+fib[1] = 2;
+
+for (i = 2; i < 50; i++)
 {
-if (i != 1)
+fib[i] = fib[i - 1] + fib[i - 2];
+}
+
+for (i = 0; i < 49; i++)
 {
+putchar(fib[i] / 100 + '0');
+putchar(fib[i] / 10 % 10 + '0');
+putchar(fib[i] % 10 + '0');
 putchar(',');
 putchar(' ');
 }
-printf("%lu", curr);
-next = prev + curr;
-prev = curr;
-curr = next;
-}
+
+putchar(fib[49] / 100 + '0');
+putchar(fib[49] / 10 % 10 + '0');
+putchar(fib[49] % 10 + '0');
 putchar('\n');
 return (0);
 }
