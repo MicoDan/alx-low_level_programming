@@ -21,8 +21,8 @@ while (sum / digits > 9)
 digits *= 10;
 
 while (digits > 0)
- {
-int digit = sum / digits;
+{
+int digit = sum/digits;
 putchar(digit + '0');
 sum %= digits;
 digits /= 10;
