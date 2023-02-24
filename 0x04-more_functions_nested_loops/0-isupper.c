@@ -9,8 +9,8 @@
 int _isupper(int c)
 {
         /* Checks if the ASCII value of the character is between 65 and 90, inclusive */
-	if (c >= 65 && c <= 90)
-		return (1);
-	else
-		return (0);
+if (c >= 65 && c <= 90)
+return (1);
+else
+return (0);
 }
