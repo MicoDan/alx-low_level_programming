@@ -1,29 +1,40 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 /**
- * main - generate a random valid password for 101-crackme
+ * main - generates a random valid password for 101-crackme
  *
- * Return: Always 0
+ * Return: 0
  */
 int main(void)
 {
-char password[84];
-int i, n;
+char password[12];
+int i, sum, diff;
 
 srand(time(NULL));
 
-for (i = 0; i < 10; i++)
-{
-password[i] = rand() % 94 + 33;
-}
-password[i++] = '\xef';
-password[i++] = '\x98';
-password[i++] = '\x04';
-password[i] = '\x08';
+/* Generate first 7 characters */
+for (i = 0; i < 7; i++)
+password[i] = rand() % 10 + '0';
 
-printf("%s", password);
+/* Generate last 5 characters */
+sum = 0;
+for (i = 0; i < 7; i++)
+sum += password[i] - '0';
+diff = ('9' - '0' + 1) * 7 - sum;
+if (diff <= 0 || diff > 9)
+password[7] = '0';
+else
+password[7] = diff + '0';
+for (i = 8; i < 12; i++)
+password[i] = rand() % 10 + '0';
+
+/* Print password */
+for (i = 0; i < 12; i++)
+putchar(password[i]);
+putchar('\n');
 
 return (0);
 }
+
