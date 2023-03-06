@@ -1,23 +1,31 @@
-#include <stdio.h>
-
 /**
- * print_diagsums - prints the sum of the two diagonals of a square matrix
- * of integers
- * @a: the 2D array representing the matrix
- * @size: the size of the matrix
+ * _strspn - gets the length of a prefix substring
+ * @s: string to be scanned
+ * @accept: string containing the characters to match
  *
- * Return: void
+ * Return: number of bytes in the initial segment of s
+ *         which consist only of bytes from accept
  */
-void print_diagsums(int *a, int size)
+unsigned int _strspn(char *s, char *accept)
 {
-int i, j;
-int sum1 = 0, sum2 = 0;
+unsigned int i, j, n;
 
-for (i = 0; i < size; i++)
+n = 0;
+for (i = 0; s[i] != '\0'; i++)
 {
-sum1 += a[i * size + i];
-sum2 += a[i * size + (size - 1 - i)];
+for (j = 0; accept[j] != '\0'; j++)
+{
+if (s[i] == accept[j])
+{
+n++;
+break;
+}
+}
+if (accept[j] == '\0')
+{
+return (n);
+}
+}
+return (n);
 }
 
-printf("%d, %d\n", sum1, sum2);
-}
