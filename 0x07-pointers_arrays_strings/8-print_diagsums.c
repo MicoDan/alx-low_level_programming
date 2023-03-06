@@ -1,31 +1,25 @@
-/**
- * _strspn - gets the length of a prefix substring
- * @s: string to be scanned
- * @accept: string containing the characters to match
- *
- * Return: number of bytes in the initial segment of s
- *         which consist only of bytes from accept
- */
-unsigned int _strspn(char *s, char *accept)
-{
-unsigned int i, j, n;
 
-n = 0;
-for (i = 0; s[i] != '\0'; i++)
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * print_diagsums - prints the sum of the two diagonals of a square matrix
+ * of integers
+ * @a: the matrix to process
+ * @size: the size of the matrix
+ *
+ * Return: nothing
+ */
+void print_diagsums(int *a, int size)
 {
-for (j = 0; accept[j] != '\0'; j++)
+int i, sum1, sum2;
+sum1 = 0;
+sum2 = 0;
+for (i = 0; i < size; i++)
 {
-if (s[i] == accept[j])
-{
-n++;
-break;
+sum1 += *(a + i * size + i);
+sum2 += *(a + i * size + (size - i - 1));
 }
-}
-if (accept[j] == '\0')
-{
-return (n);
-}
-}
-return (n);
+printf("%d, %d\n", sum1, sum2);
 }
 
