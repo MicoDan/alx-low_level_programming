@@ -1,11 +1,7 @@
-  GNU nano 6.4                         main.h
 #ifndef MAIN_H
-
 #define MAIN_H
 
-#include <stdio.h>
+int _putchar(char c);
+int _atoi(char *s);
 
-int main(int argc, char *argv[]);
-
-#endif /* MAIN_H */
-
+#endif
