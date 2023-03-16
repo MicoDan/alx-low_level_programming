@@ -15,10 +15,12 @@ char *result;
 unsigned int len1, len2, i;
 
 /* Treat NULL as an empty string */
-if (s1 == NULL) {
+if (s1 == NULL)
+{
 s1 = "";
 }
-if (s2 == NULL) {
+if (s2 == NULL)
+{
 s2 = "";
 }
 
@@ -27,23 +29,27 @@ len1 = strlen(s1);
 len2 = strlen(s2);
 
 /* Use the entire s2 if n >= len2 */
-if (n >= len2) {
+if (n >= len2)
+{
 n = len2;
  }
 
 /* Allocate memory for the result string */
 result = malloc(sizeof(char) * (len1 + n + 1));
-if (result == NULL) {
+if (result == NULL)
+{
 return (NULL);
 }
 
 /* Copy s1 to the result string */
-for (i = 0; i < len1; i++) {
+for (i = 0; i < len1; i++)
+{
 result[i] = s1[i];
 }
 
 /* Copy n bytes of s2 to the result string */
-for (i = 0; i < n; i++) {
+for (i = 0; i < n; i++)
+{
 result[len1 + i] = s2[i];
 }
 
