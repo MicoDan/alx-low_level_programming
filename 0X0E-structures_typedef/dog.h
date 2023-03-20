@@ -1,5 +1,6 @@
-#include <stdio.h>
-#include "dog.h"
+#ifndef DOG_H
+#define DOG_H
+
 
 /**
  * struct dog - a dog's basic info
@@ -31,5 +32,4 @@ char *_strcpy(char *dest, char *src);
 int _strlen(char *s);
 
 
-
-
+#endif
